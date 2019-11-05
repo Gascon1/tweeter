@@ -64,11 +64,13 @@ let aDay = 24 * 60 * 60 * 1000
 
 const createTweetElement = function (tweet) {
   let $tweet = $('<article>').addClass('tweet');
-  let $header = $('<header>').addClass('container');
+  let $header = $('<header>').addClass('container container-name');
+  let $div = $('<div>').addClass('container-name');
   let $profilePic = $('<img>').attr("src", tweet.user.avatars);
-  $header.append($profilePic);
-  let $span = $('<span>').text(tweet.user.name);
-  $header.append($span);
+  $div.append($profilePic);
+  let $span = $('<span>').text(tweet.user.name).addClass('name');
+  $div.append($span);
+  $header.append($div);
   let $sneakySpan = $('<span>').text(tweet.user.handle).addClass('handle');
   $header.append($sneakySpan);
   $tweet.append($header);

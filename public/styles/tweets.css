@@ -20,10 +20,18 @@ article:hover header span.handle {
   font-weight: 700;
 }
 
+img {
+  max-width: 30%;
+  height: auto;
+}
 
 article.tweet header {
   padding: 1em 0.7em;
   padding-bottom: 0.8em;
+}
+
+.name {
+  padding: 0.5em;
 }
 
 article.tweet main {
@@ -47,9 +55,13 @@ article.tweet footer {
 color: #f4f1ec;
 }
 
-
-
 .container {
   display: flex;
   justify-content: space-between;
+  /* align-items: center; */
+}
+
+.container-name {
+  display: flex;
+  align-items: center;
 }
