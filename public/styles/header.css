@@ -3,6 +3,7 @@ header#profile-image{
   width: 100%;
   background-color: rgb(235, 172, 48);
   background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre-v2.png");
+  font-size: 24px;
 }
 
 .centered-header {
@@ -10,7 +11,7 @@ header#profile-image{
   margin: 0 auto;
   text-align:center;
   color: #f4f1ec;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 h2 span {

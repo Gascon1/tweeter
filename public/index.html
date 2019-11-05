@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
   <!-- Font CSS -->
-  <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap"
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,600,600i&display=swap"
     rel="stylesheet">
 
   <!-- App CSS -->
@@ -23,6 +23,9 @@
 
   <!-- New Tweet CSS -->
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+  <!-- All Tweets CSS -->
+  <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
   <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -62,13 +65,13 @@
         </div>
       </form>
     </section>
-    <article>
-      <header>
-        This is the header of the tweet
+    <article class="tweet">
+      <header class="container">
+          <span>This is the header</span><span class="handle"> of the tweet</span>
       </header>
-      <p>
+      <main>
         This is the content of the tweet
-      </p>
+      </main>
       <footer>
         This is the footer if the tweet
       </footer>
