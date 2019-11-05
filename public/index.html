@@ -1,29 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+  <!-- Font CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap"
+    rel="stylesheet">
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-    </nav>
+  <!-- Navbar CSS -->
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
-    <!-- Page-specific (main) content here -->
-    <main class="container"></main>
-  </body>
+  <!-- Header CSS -->
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
+  <!-- New Tweet CSS -->
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+  <!-- External JS -->
+  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+
+  <!-- Character Counter JS -->
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+</head>
+
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav class="container">
+    <span>Tweeter</span>
+    <div>Write <span>a new tweet</span>
+    </div>
+  </nav>
+
+  <header id="profile-image">
+    <div>
+      <img src="/images/profile-hex.png" class="centered-header">
+    </div>
+    <br>
+    <div>
+      <h2 class="centered-header">Your <span>Name</span></h2>
+    </div>
+  </header>
+  <!-- Page-specific (main) content here -->
+  <main>
+    <section class="new-tweet">
+      <form action="/tweets/" method="POST">
+        <textarea id="charCounter" name="text" placeholder="What are you humming about?"></textarea>
+        <div class="container">
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </div>
+      </form>
+    </section>
+    <article>
+      <header>
+        This is the header of the tweet
+      </header>
+      <p>
+        This is the content of the tweet
+      </p>
+      <footer>
+        This is the footer if the tweet
+      </footer>
+    </article>
+  </main>
+</body>
+
 </html>

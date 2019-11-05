@@ -1,0 +1,30 @@
+nav {
+  height: 120px;
+  position: sticky;
+  width: 100%;
+  z-index: 10;
+  background-color: #4056A1;
+  color: #f4f1ec;
+  padding: 1.5em;
+  font-size: 35px;
+  top: 0;
+  /* display: inline-block; */
+  font-family: Bungee;
+}
+
+nav div {
+  font-family: Source Sans Pro;
+  font-size: 24px;
+  font-weight: 700;
+  /* display: inline-block; */
+  position: relative;
+}
+
+nav div span {
+  font-weight: 300;
+}
+
+nav.container {
+  display: flex;
+  justify-content: space-between;
+}
