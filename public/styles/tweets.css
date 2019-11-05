@@ -3,6 +3,7 @@ article {
   border: 3px solid;
   border-color: #545149;
   font-size: 20px;
+  margin-bottom: 1em;
 }
 
 article:hover {

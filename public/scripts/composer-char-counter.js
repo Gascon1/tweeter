@@ -4,13 +4,13 @@ $(document).ready(function () {
   charCounter.keyup(function () {
     let tweetLength = charCounter.val().length;
     // console.log(charCounter.val().length);
-    $('.counter').text((140 - tweetLength));
-    // console.log($('.counter').text());
+    $(this).parent().find('.counter').text((140 - tweetLength));
+    // console.log($(this).parent().find('.counter').text());
 
     if ( tweetLength > 140 ) {
-      $('.counter').addClass("red");
+      $(this).parent().find('.counter').addClass("red");
     } else {
-      $('.counter').removeClass("red");
+      $(this).parent().find('.counter').removeClass("red");
     }
   });
 
