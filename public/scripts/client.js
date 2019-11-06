@@ -59,7 +59,6 @@ function timeSince(date) {
   }
   return Math.floor(seconds) + " seconds";
 }
-let aDay = 24 * 60 * 60 * 1000
 
 
 const createTweetElement = function (tweet) {
@@ -79,14 +78,23 @@ const createTweetElement = function (tweet) {
 
   let date = new Date(tweet.created_at);
   let timeElapsed = timeSince(date);
-  let $footer = $('<footer>').text(`${timeElapsed} ago`);
+  let $footer = $('<footer>').addClass('container')
+  let $timeSince = $('<span>').text(`${timeElapsed} ago`);
+  $footer.append($timeSince);
+  let $icons = $('<span>')
+  let $i2 = $('<i>').addClass('fas fa-flag');
+  $icons.append($i2);
+  let $i = $('<i>').addClass('fas fa-retweet');
+  $icons.append($i);
+  let $i3 = $('<i>').addClass('fas fa-heart');
+  $icons.append($i3);
+  $footer.append($icons);
   $tweet.append($footer);
   return $tweet;
 }
 
 const renderTweets = function (tweets) {
   for (const tweet of tweets) {
-      console.log(createTweetElement(tweet));
       let $tweet = createTweetElement(tweet);
       $('#tweets-container').append($tweet); 
     }
@@ -96,13 +104,3 @@ const renderTweets = function (tweets) {
   $(document).ready(function () {
     renderTweets(data);
 });
-
-// $(document).ready(function () {
-
-
-// const $tweet = createTweetElement(tweetData);
-
-// // Test / driver code (temporary)
-// console.log($tweet); // to see what it looks like
-
-// });

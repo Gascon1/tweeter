@@ -27,4 +27,5 @@ nav div span {
 nav.container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
