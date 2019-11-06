@@ -106,3 +106,15 @@ $(document).ready(function () {
     }
   })
 });
+
+/**toggling the new tweet section */
+$(document).ready(function () {
+  const $btn = $('#compose')
+  const $newTweet = $('.new-tweet')
+
+  $btn.on('click', function () {
+    $newTweet.slideToggle(300, function () {
+      $('textarea').focus();
+    });
+  })
+})

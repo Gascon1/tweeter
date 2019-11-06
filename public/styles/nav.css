@@ -8,7 +8,6 @@ nav {
   padding: 1.5em;
   font-size: 35px;
   top: 0;
-  /* display: inline-block; */
   font-family: Bungee;
 }
 
@@ -16,7 +15,6 @@ nav div {
   font-family: Source Sans Pro;
   font-size: 24px;
   font-weight: 600;
-  /* display: inline-block; */
   position: relative;
 }
 
@@ -28,4 +26,44 @@ nav.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+#compose, .arrow-down {
+  background-color: rgba(127, 255, 212, 0);
+  color: #f4f1ec;
+  border: none;
+}
+
+.arrow-down {
+  color: rgb(246, 68, 13);
+}
+
+@-webkit-keyframes arrow-jump {
+  0%   { 
+    transform: translateY(0px);
+    color: rgb(246, 68, 13);
+  }
+
+  25% {
+    color: rgb(228, 179, 21);
+
+  }
+  50% {
+    transform: translateY(7px);
+    color: rgb(246, 68, 13);
+
+  }
+  75% {
+    color: rgb(228, 179, 21);
+
+  }
+  100% { 
+    transform: translateY(0px);
+    color: rgb(246, 68, 13);
+
+  } 
+    
+}
+#arrow {
+  animation: arrow-jump 1.4s infinite;
 }
