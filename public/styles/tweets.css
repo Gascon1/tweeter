@@ -11,13 +11,13 @@ article:hover {
   /* text-shadow: 
   1px 1px 0 #7773695d; */
   box-shadow: 
-  5px 5px 10px #7773695d;
+  5px 5px 10px #5451497e;
   font-weight: 400;
 
 }
 
 article:hover header span.handle {
-  color: #7773695d;
+  color: #5451497e;
   font-weight: 700;
   opacity: 1;
 }
@@ -66,10 +66,6 @@ article.tweet footer {
 }
 
 i {
-  padding: 0 4px;
+  padding-left: 4px;
   color: #4056A1;
-}
-
-i.fa-heart {
-  padding-right: 0;
 }

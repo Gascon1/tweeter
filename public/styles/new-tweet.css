@@ -5,6 +5,7 @@ textarea {
   height: 30px;
   resize: none;
   font-family: Source Sans Pro;
+  font-size: 1.1em;
   font-weight: 600;
   color: #545149;
   background-color: #f4f1ec;
@@ -14,6 +15,7 @@ textarea {
   border-bottom-width: 3px;
   border-bottom-color: #545149;
   outline: none;
+  overflow: hidden;
 }
 
 input {

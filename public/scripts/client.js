@@ -1,41 +1,6 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-// Test / driver code (temporary). Eventually will get this from the server.
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
-
+/**function for time ago on tweets*/
 function timeSince(date) {
-
   let seconds = Math.floor((new Date() - date) / 1000);
-
   let interval = Math.floor(seconds / 31536000);
 
   if (interval > 1) {
@@ -60,8 +25,9 @@ function timeSince(date) {
   return Math.floor(seconds) + " seconds";
 }
 
-
+/**function to make a tweet*/
 const createTweetElement = function (tweet) {
+  // header
   let $tweet = $('<article>').addClass('tweet');
   let $header = $('<header>').addClass('container container-name');
   let $div = $('<div>').addClass('container-name');
@@ -73,9 +39,12 @@ const createTweetElement = function (tweet) {
   let $sneakySpan = $('<span>').text(tweet.user.handle).addClass('handle');
   $header.append($sneakySpan);
   $tweet.append($header);
+
+  //content
   let $main = $('<main>').text(tweet.content.text);
   $tweet.append($main);
 
+  //footer
   let date = new Date(tweet.created_at);
   let timeElapsed = timeSince(date);
   let $footer = $('<footer>').addClass('container')
@@ -94,13 +63,46 @@ const createTweetElement = function (tweet) {
 }
 
 const renderTweets = function (tweets) {
+  tweets.reverse();
+  $('#tweets-container').empty();
   for (const tweet of tweets) {
-      let $tweet = createTweetElement(tweet);
-      $('#tweets-container').append($tweet); 
-    }
+    let $tweet = createTweetElement(tweet);
+    $('#tweets-container').append($tweet);
   }
-  
-  
-  $(document).ready(function () {
-    renderTweets(data);
+}
+
+
+const loadTweets = function () {
+  $.ajax({
+    method: "GET",
+    url: "http://localhost:8080/tweets"
+  })
+    .done(renderTweets)
+}
+
+
+
+$(document).ready(function () {
+  const $form = $('form');
+  $form.on('submit', function (event) {
+    event.preventDefault();
+    if ($('#charCounter').val() === "") {
+      alert("I know this app is great and all, but please write something before attempting to post!")
+      return;
+    } else if ($('#charCounter').val().length > 140) {
+      alert("I see you're getting a little excited, please limit yourself to 140 characters!")
+      return;
+    } else {
+      $.ajax({
+        method: "POST",
+        url: "http://localhost:8080/tweets/",
+        data: $(this).serialize()
+      })
+        .done(function () {
+          $('#charCounter').val('');
+          $('.counter').text(140);
+          loadTweets();
+        })
+    }
+  })
 });
