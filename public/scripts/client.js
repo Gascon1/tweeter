@@ -36,8 +36,8 @@ const createTweetElement = function (tweet) {
   let $span = $('<span>').text(tweet.user.name).addClass('name');
   $div.append($span);
   $header.append($div);
-  let $sneakySpan = $('<span>').text(tweet.user.handle).addClass('handle');
-  $header.append($sneakySpan);
+  let handle = $('<span>').text(tweet.user.handle).addClass('handle');
+  $header.append(handle);
   $tweet.append($header);
 
   //content
@@ -51,17 +51,20 @@ const createTweetElement = function (tweet) {
   let $timeSince = $('<span>').text(`${timeElapsed} ago`);
   $footer.append($timeSince);
   let $icons = $('<span>')
-  let $i2 = $('<i>').addClass('fas fa-flag');
+  let $i2 = $('<i>').addClass('fas fa-flag reaction');
   $icons.append($i2);
-  let $i = $('<i>').addClass('fas fa-retweet');
+  let $i = $('<i>').addClass('fas fa-retweet reaction');
   $icons.append($i);
-  let $i3 = $('<i>').addClass('fas fa-heart');
+  let $i3 = $('<i>').addClass('fas fa-heart reaction');
   $icons.append($i3);
   $footer.append($icons);
   $tweet.append($footer);
   return $tweet;
 }
 
+/** function to render the tweets 
+ * from the loaded tweets via callback
+ */
 const renderTweets = function (tweets) {
   tweets.reverse();
   $('#tweets-container').empty();
@@ -71,7 +74,9 @@ const renderTweets = function (tweets) {
   }
 }
 
-
+/**function to load tweets via 
+ * get method and ajax
+ */
 const loadTweets = function () {
   $.ajax({
     method: "GET",
@@ -80,8 +85,21 @@ const loadTweets = function () {
     .done(renderTweets)
 }
 
+/**
+ * initial load of all the tweets, so
+ * that when a user loads the page,
+ * all the already existing tweets are loaded.
+ */
+$(document).ready(function () {
+  loadTweets();
+})
 
-
+/** When the Tweet button is pressed
+ * to post a new tweet, the default behavior
+ * of the submit button is prevented and instead 
+ * replaced by ajax. The sliding effect and the errors
+ * are also handled in here.
+ */
 $(document).ready(function () {
   const $form = $('form');
   $form.on('submit', function (event) {
@@ -123,13 +141,17 @@ $(document).ready(function () {
   })
 })
 
+/**
+ * #Stretch# button to scroll up 
+ * only appears when a user has scrolled 
+ * more than 570px
+ */
 $(document).ready(function () {
   $(window).scroll(function() {
     if ($(this).scrollTop() >= 570) {  
-      console.log("above 50px")      // If page is scrolled more than 50px
-        $('.return-to-top').fadeIn(200);    // Fade in the arrow
+        $('.return-to-top').fadeIn(50);    // Fade in the arrow
     } else {
-        $('.return-to-top').fadeOut(200);   // Else fade out the arrow
+        $('.return-to-top').fadeOut(50);   // Else fade out the arrow
     }
   });
   $('.return-to-top').click(function() {      // When arrow is clicked

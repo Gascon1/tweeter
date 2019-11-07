@@ -9,8 +9,6 @@ article {
 }
 
 article:hover {
-  /* text-shadow: 
-  1px 1px 0 #7773695d; */
   box-shadow: 
   5px 5px 10px #5451497e;
   font-weight: 400;
@@ -18,9 +16,9 @@ article:hover {
 }
 
 article:hover header span.handle {
-  color: #5451497e;
+  color: rgba(121, 121, 121);
   font-weight: 700;
-  opacity: 1;
+  opacity: 0.75;
 }
 
 img {
@@ -68,5 +66,13 @@ article.tweet footer {
 
 i {
   padding-left: 4px;
-  color: #4056A1;
+  color: rgba(121, 121, 121, 0.829);
+}
+
+article:hover .reaction {
+  opacity: 1;
+}
+
+.reaction {
+  opacity: 0;
 }

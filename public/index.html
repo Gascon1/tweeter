@@ -45,7 +45,6 @@
 </head>
 
 <body>
-  <!-- Top nav bar (fixed) -->
   <a class="return-to-top"><i class="fas fa-angle-up"></i></a>
   <nav class="container">
     <span>Tweeter</span>
@@ -64,8 +63,8 @@
         <h2 class="centered-header">Mikel <span>Gascon</span></h2>
       </div>
     </header>
-    <!-- Page-specific (main) content here -->
     <main class="box">
+      <!-- error handling messages -->
       <section class="centered-alert">
         <span id="if-is-empty" class="has-errors "><i class="fas fa-bug icon-has-error"></i> I know this app is great
           and all, but please write something before attempting to post!<i class="fas fa-bug icon-has-error"></i></span>
@@ -81,6 +80,7 @@
           </div>
         </form>
       </section>
+      <!-- generating the tweets in here -->
       <section id="tweets-container">
       </section>
     </main>
