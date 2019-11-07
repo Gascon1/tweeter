@@ -43,6 +43,7 @@
 
 <body>
   <!-- Top nav bar (fixed) -->
+  <a class="return-to-top"><i class="fas fa-angle-up"></i></a>
   <nav class="container">
     <span>Tweeter</span>
     <button id='compose'>
@@ -54,17 +55,16 @@
     <div>
       <img src="/images/profile-hex.png" class="centered-header">
     </div>
-    <br>
     <div>
       <h2 class="centered-header">Mikel <span>Gascon</span></h2>
     </div>
   </header>
   <!-- Page-specific (main) content here -->
   <main>
-      <section class="centered-alert">
-        <span id="if-is-empty" class="has-errors "><i class="fas fa-bug icon-has-error"></i> I know this app is great and all, but please write something before attempting to post!<i class="fas fa-bug icon-has-error"></i></span>
-        <span id="if-is-too-long" class="has-errors"><i class="fas fa-bug icon-has-error"></i> I see you're getting a little excited, please limit yourself to 140 characters! <i class="fas fa-bug icon-has-error"></i></span>
-      </section>
+    <section class="centered-alert">
+      <span id="if-is-empty" class="has-errors "><i class="fas fa-bug icon-has-error"></i> I know this app is great and all, but please write something before attempting to post!<i class="fas fa-bug icon-has-error"></i></span>
+      <span id="if-is-too-long" class="has-errors"><i class="fas fa-bug icon-has-error"></i> I see you're getting a little excited, please limit yourself to 140 characters! <i class="fas fa-bug icon-has-error"></i></span>
+    </section>
     <section class="new-tweet">
       <form action="/tweets/" method="POST">
         <textarea wrap="off" id="charCounter" name="text" placeholder="What are you humming about?"></textarea>
