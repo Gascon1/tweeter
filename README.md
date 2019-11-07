@@ -3,9 +3,9 @@
 A simple single-page AJAX-based Twitter clone built using HTML, CSS, JS, jQuery and AJAX on the front-end, and Node, Express and MongoDB on the back-end.
 
 ## Final Product
-![Screenshot of default layout]()
-![Screenshot of error message]()
-![Screenshot of phone layout ]()
+![Screenshot of default layout](https://raw.githubusercontent.com/Gascon1/tweeter/master/docs/tweet-default-layout.png)
+![Screenshot of error message](https://raw.githubusercontent.com/Gascon1/tweeter/master/docs/tweet-error.png)
+![Screenshot of phone layout ](https://raw.githubusercontent.com/Gascon1/tweeter/master/docs/tweet-phone%20layout.png)
 
 ## Getting Started
 
