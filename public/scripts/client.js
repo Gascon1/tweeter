@@ -87,10 +87,12 @@ $(document).ready(function () {
   $form.on('submit', function (event) {
     event.preventDefault();
     if ($('#charCounter').val() === "") {
-      alert("I know this app is great and all, but please write something before attempting to post!")
+      $('#if-is-too-long').slideUp(0)
+      $('#if-is-empty').slideDown()
       return;
     } else if ($('#charCounter').val().length > 140) {
-      alert("I see you're getting a little excited, please limit yourself to 140 characters!")
+      $('#if-is-empty').slideUp(0)
+      $('#if-is-too-long').slideDown()
       return;
     } else {
       $.ajax({
@@ -101,6 +103,8 @@ $(document).ready(function () {
         .done(function () {
           $('#charCounter').val('');
           $('.counter').text(140);
+          $('#if-is-empty').slideUp()
+          $('#if-is-too-long').slideUp()
           loadTweets();
         })
     }

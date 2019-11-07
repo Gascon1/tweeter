@@ -1,6 +1,6 @@
 textarea {
   margin: 0 auto;
-  margin-top: 60px;
+  margin-top: 45px;
   width: 100%;
   height: 30px;
   resize: none;
@@ -42,4 +42,32 @@ div.container {
 
 .red {
   color: red;
+}
+
+.has-errors {
+  margin: 1em;
+  padding: 1em;
+  border-radius: 0.5em;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(206, 73, 73, 0.514);
+  color: rgba(146, 41, 41, 0.808);
+}
+
+.icon-has-error {
+  color: rgba(146, 41, 41, 0.808);
+}
+
+#if-is-empty {
+  display: none;
+}
+
+#if-is-too-long {
+  display: none;  
+}
+
+.centered-alert {
+  display: flex;
+  align-content: center;
 }
