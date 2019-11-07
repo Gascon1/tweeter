@@ -19,7 +19,8 @@ textarea {
 }
 
 input {
-  background-color: #4056A1;
+  background-color: rgba(160, 160, 160, 0.842);
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
   font-family: Bungee;
   color: #f4f1ec;
   border: none;

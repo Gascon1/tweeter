@@ -3,7 +3,8 @@ nav {
   position: sticky;
   width: 100%;
   z-index: 10;
-  background-color: #4056A1;
+  background-color: rgba(160, 160, 160, 0.842);
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
   color: #f4f1ec;
   padding: 1.5em;
   font-size: 35px;
